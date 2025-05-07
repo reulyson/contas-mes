@@ -128,18 +128,7 @@ with st.sidebar:
                             format_func=lambda x: datetime(1900, x, 1).strftime('%B'))
     ano_atual = st.selectbox("Ano", range(2020, 2031), index=datetime.now().year - 2020)
     mes_ano = f"{mes_atual:02d}/{ano_atual}"
-    st.markdown("---")
-    st.markdown("### Ações Rápidas")
-    if st.button("➕ Nova Despesa Geral"):
-        adicionar_conta("geral", None, mes_ano)
     
-    st.markdown("---")
-    st.markdown("### Backup")
-    if st.button("💾 Fazer Backup dos Dados"):
-        with open('backup_financeiro.json', 'w', encoding='utf-8') as f:
-            json.dump(st.session_state.dados, f, ensure_ascii=False, indent=4)
-        st.success("Backup salvo como 'backup_financeiro.json'")
-
 # Layout principal
 tab_ind, tab_geral, tab_resumo = st.tabs(["👥 Despesas Individuais", "🏠 Despesas Gerais", "📊 Resumo Avançado"])
 
