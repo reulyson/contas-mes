@@ -89,8 +89,8 @@ if "dados" not in st.session_state:
     dados_carregados = carregar_dados()
     st.session_state.dados = dados_carregados if dados_carregados else {
         "usuarios": {
-            "Usuário 1": {"salario": 0.0, "contas": {}},
-            "Usuário 2": {"salario": 0.0, "contas": {}}
+            "Reulyson": {"salario": 0.0, "contas": {}},
+            "Vanessa": {"salario": 0.0, "contas": {}}
         },
         "despesas_gerais": {}
     }
