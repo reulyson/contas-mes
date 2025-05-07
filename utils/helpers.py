@@ -20,3 +20,31 @@ def format_currency(value):
 def get_current_month_year():
     now = datetime.now()
     return f"{now.month:02d}/{now.year}"
+
+def calcular_resumo_geral(mes_ano, dados):
+    # Cálculo dos totais
+    total_salarios = sum(u["salario"] for u in dados["usuarios"].values())
+    
+    total_despesas_ind = sum(
+        calcular_totais(u["contas"].get(mes_ano, []))[0]
+        for u in dados["usuarios"].values()
+    )
+    
+    total_despesas_ger = calcular_totais(dados["despesas_gerais"].get(mes_ano, []))[0]
+    total_despesas = total_despesas_ind + total_despesas_ger
+    
+    saldo_individual_total = sum(
+        u["salario"] - calcular_totais(u["contas"].get(mes_ano, []))[0]
+        for u in dados["usuarios"].values()
+    )
+    
+    saldo_consolidado = saldo_individual_total - total_despesas_ger
+    
+    return {
+        "total_salarios": total_salarios,
+        "total_despesas_ind": total_despesas_ind,
+        "total_despesas_ger": total_despesas_ger,
+        "total_despesas": total_despesas,
+        "saldo_individual_total": saldo_individual_total,
+        "saldo_consolidado": saldo_consolidado
+    }

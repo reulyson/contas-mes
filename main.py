@@ -5,6 +5,7 @@ from components.individual_tab import render_individual_tab
 from components.general_tab import render_general_tab
 from components.summary_tab import render_summary_tab
 from components.fixed_costs_tab import render_fixed_costs_tab
+from components.consolidated_summary import render_consolidated_summary
 from utils.persistence import initialize_data
 
 def main():
@@ -37,6 +38,10 @@ def main():
     
     with tab_fixos:
         render_fixed_costs_tab()
+    
+    # Resumo Consolidado (adicionado após as abas)
+    st.markdown("---")
+    render_consolidated_summary(mes_ano)
 
 if __name__ == "__main__":
     main()
