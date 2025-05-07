@@ -136,4 +136,7 @@ def render_user_summary(usuario, mes_ano):
     with col3:
         st.metric("Pendente", f"R$ {pendente:,.2f}")
     
-    st.metric("Saldo", f"R$ {saldo:,.2f}", delta_color="inverse" if saldo < 0 else "normal")
+    st.metric("Saldo",
+              f"R$ {saldo:,.2f}",
+            )
+    

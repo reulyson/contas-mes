@@ -4,7 +4,7 @@ from utils.helpers import get_next_month
 from utils.persistence import salvar_dados
 
 def render_sidebar():
-    st.header("🔧 Configurações")
+    st.header('')
     
     # Seleção de mês/ano
     mes_atual = st.selectbox(
