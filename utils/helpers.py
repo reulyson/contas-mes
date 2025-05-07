@@ -45,6 +45,5 @@ def calcular_resumo_geral(mes_ano, dados):
         "total_despesas_ind": total_despesas_ind,
         "total_despesas_ger": total_despesas_ger,
         "total_despesas": total_despesas,
-        "saldo_individual_total": saldo_individual_total,
         "saldo_consolidado": saldo_consolidado
     }
