@@ -34,10 +34,7 @@ def calcular_resumo_geral(mes_ano, dados):
         
         return {
             "total_salarios": total_salarios,
-            "total_despesas_ind": total_despesas_ind,
-            "total_despesas_ger": total_despesas_ger,
             "total_despesas": total_despesas_ind + total_despesas_ger,
-            "saldo_individual_total": total_salarios - total_despesas_ind,
             "saldo_consolidado": (total_salarios - total_despesas_ind) - total_despesas_ger
         }
     except Exception as e:
